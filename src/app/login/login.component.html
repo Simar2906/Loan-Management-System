@@ -1,0 +1,10 @@
+<p>Login Panel</p>
+<form [formGroup] = "loginForm" (submit)="loginProcedure()">
+    <label for="email">Email</label><br>
+    <input type="text" name="email" id="email" formControlName="email">
+    <br><br>
+    <label for="pwd">Password</label><br>
+    <input type="password" name="password" id="pwd" formControlName="password">
+    <br><br>
+    <input type="submit" name="" id="" value="Login">
+</form>

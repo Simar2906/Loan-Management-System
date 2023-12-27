@@ -1,0 +1,21 @@
+export interface IAppliedLoan {
+    email: string,
+    gender: string,
+    name: string,
+    password: string,
+    role: string,
+    logo: string,
+    title: string,
+    loanAmount: string,
+    interestRates: string,
+    Mincreditscore: string,
+    TermLenghth: string,
+    ProcessingFee: string,
+    currentemployer: string,
+    designation: string,
+    salary: string,
+    loanAmountToApply: string,
+    approved: boolean,
+    rejected: boolean,
+    id: number
+}

@@ -1,0 +1,160 @@
+{
+  "loans": [
+    {
+      "logo": "https://play-lh.googleusercontent.com/GdICLxnKd-e-lmV46N_SjihWHzAUX1nj8e--dF2KrQjvomN4zxOR-iEWwsTG_Tqr_oc",
+      "title": "Bank of America",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100"
+    },
+    {
+      "logo": "https://download.logo.wine/logo/Chase_Bank/Chase_Bank-Logo.wine.png",
+      "title": "Chase",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100"
+    },
+    {
+      "logo": "https://png.pngitem.com/pimgs/s/144-1449994_state-farm-samantha-alberson-png-download-state-farm.png",
+      "title": "state Farm",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100"
+    }
+  ],
+  "appliedNewLoans": [
+    {
+      "email": "nishant@gmail.com",
+      "gender": "male",
+      "name": "nishant",
+      "password": "nishant12345",
+      "role": "CUSTOMER",
+      "logo": "https://play-lh.googleusercontent.com/GdICLxnKd-e-lmV46N_SjihWHzAUX1nj8e--dF2KrQjvomN4zxOR-iEWwsTG_Tqr_oc",
+      "title": "Bank of America",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100",
+      "currentemployer": "nishant@gmail.com",
+      "designation": "Developer",
+      "salary": "50000",
+      "loanAmountToApply": "2000",
+      "approved": true,
+      "rejected": false,
+      "id": 1
+    },
+    {
+      "email": "nishant@gmail.com",
+      "gender": "male",
+      "name": "nishant",
+      "password": "nishant12345",
+      "role": "CUSTOMER",
+      "logo": "https://download.logo.wine/logo/Chase_Bank/Chase_Bank-Logo.wine.png",
+      "title": "Chase",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100",
+      "currentemployer": "nishant@gmail.com",
+      "designation": "Desginer",
+      "salary": "231232",
+      "loanAmountToApply": "3000",
+      "approved": false,
+      "rejected": true,
+      "id": 2
+    },
+    {
+      "email": "nishant@gmail.com",
+      "gender": "male",
+      "name": "nishant",
+      "password": "nishant12345",
+      "role": "CUSTOMER",
+      "logo": "https://download.logo.wine/logo/Chase_Bank/Chase_Bank-Logo.wine.png",
+      "title": "Chase",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100",
+      "currentemployer": "nishant@gmail.com",
+      "designation": "Developer",
+      "salary": "50000",
+      "loanAmountToApply": "3000",
+      "approved": true,
+      "rejected": false,
+      "id": 3
+    },
+    {
+      "email": "nishant@gmail.com",
+      "gender": "male",
+      "name": "nishant",
+      "password": "nishant12345",
+      "role": "CUSTOMER",
+      "logo": "https://png.pngitem.com/pimgs/s/144-1449994_state-farm-samantha-alberson-png-download-state-farm.png",
+      "title": "state Farm",
+      "loanAmount": "$5,000-$100,000",
+      "interestRates": "4.99% -15.69%",
+      "Mincreditscore": "660",
+      "TermLenghth": "48 Months",
+      "ProcessingFee": "$100",
+      "currentemployer": "nishant@gmail.com",
+      "designation": "Developer",
+      "salary": "50000",
+      "loanAmountToApply": "3000",
+      "approved": false,
+      "rejected": true,
+      "id": 4
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "email": "nishant@gmail.com",
+      "gender": "male",
+      "name": "nishant",
+      "password": "nishant12345",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 2,
+      "email": "john@gmail.com",
+      "gender": "male",
+      "name": "john",
+      "password": "john12345",
+      "role": "MANAGER"
+    },
+    {
+      "id": 3,
+      "email": "jasmine@gmail.com",
+      "gender": "female",
+      "name": "jasmine",
+      "password": "jasmine12345",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 4,
+      "email": "rose@gmail.com",
+      "gender": "female",
+      "name": "rose",
+      "password": "rose12345",
+      "role": "MANAGER"
+    },
+    {
+      "name": "Ansh Thakral",
+      "email": "nishantharshwardhan@gmail.com",
+      "password": "abc12345",
+      "gender": "male",
+      "salary": "40000",
+      "role": "CUSTOMER",
+      "id": 5
+    }
+  ]
+}

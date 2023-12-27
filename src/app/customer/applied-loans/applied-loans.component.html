@@ -1,0 +1,35 @@
+<br>
+<a [routerLink]="['/customer']">back</a>
+<h2 *ngIf="empty" class="NoLoan">No Loans Taken!</h2>
+<div  *ngFor="let loan of appliedLoans">
+    <mat-card class="loan-card">
+      <mat-card-header>
+        <mat-card-title>{{loan.title.toUpperCase()}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+      <img mat-card-image [src]="loan.logo" alt="Photo of {{loan.title}}">
+      <mat-card-content>
+         <table>
+          <tr>
+            <td>Applied Amount</td>
+            <td>{{loan.loanAmountToApply}}</td>
+          </tr>
+          <tr>
+            <td>Interest Rate</td>
+            <td>{{loan.interestRates}}</td>
+          </tr>
+          <tr>
+            <td>Processing Fee</td>
+            <td>{{loan.ProcessingFee}}</td>
+          </tr>
+          <tr>
+            <td>Term Length</td>
+            <td>{{loan.TermLenghth}}</td>
+          </tr>
+         </table>
+      </mat-card-content>
+      <mat-card-actions [class]="loan.approved?'approved':'rejected'">
+        <span mat-raised-button color="green">{{loan.approved ? 'Approved':'Rejected'}}</span>
+      </mat-card-actions>
+    </mat-card>
+  </div>

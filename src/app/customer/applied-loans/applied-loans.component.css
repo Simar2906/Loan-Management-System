@@ -1,0 +1,14 @@
+
+.loan-card{
+    max-width: 400px;
+    margin: 5vh 10vh;
+}
+.approved{
+    background-color: green;
+}
+.rejected{
+    background-color: red;
+}
+.NoLoan{
+    color:red;
+}
