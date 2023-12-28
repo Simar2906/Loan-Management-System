@@ -23,7 +23,7 @@ export class AppComponent {
           this.userName = this.loginService.loggedInUser.getValue()?.name;
         }
         else{
-          this.router.navigate(['/login']);
+          // this.router.navigate(['/login']);//change for testing
         }
       },
       error:(reject)=>{

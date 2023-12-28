@@ -6,7 +6,7 @@
       <mat-card-title>{{loan.title.toUpperCase()}}</mat-card-title>
 
     </mat-card-header>
-    <img mat-card-image class="userImage" src="https://th.bing.com/th/id/OIP.v6tYs4KzpxuhWrlBni9NaQHaLH?rs=1&pid=ImgDetMain" alt="Photo of Henry Cavill">
+    <img mat-card-image class="userImage" [src]="loan.customerPicture" alt="Photo of User">
     <img mat-card-sm-image [src]="loan.logo" alt="Photo of {{loan.title}}">
     
     <mat-card-content>
@@ -35,14 +35,14 @@
        <table>
         <tr>
           <td>Applied Amount</td>
-          <td>{{loan.loanAmount.split('-')[1]}}</td>
+          <td>{{loan.appliedAmount}}</td>
         </tr>
         <tr>
           <td>Interest Rates</td>
-          <td>{{loan.interestRates.split('-')[1]}}</td>
+          <td>{{loan.designatedRate}}</td>
         </tr>
         <tr>
-            <td>Prcessing Fee</td>
+            <td>Processing Fee</td>
             <td>{{loan.ProcessingFee}}</td>
           </tr>
           <tr>

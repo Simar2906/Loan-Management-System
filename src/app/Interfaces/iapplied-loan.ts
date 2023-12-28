@@ -4,10 +4,13 @@ export interface IAppliedLoan {
     name: string,
     password: string,
     role: string,
+    customerPicture: string,
     logo: string,
     title: string,
     loanAmount: string,
+    appliedAmount: string,
     interestRates: string,
+    designatedRate: string,
     Mincreditscore: string,
     TermLenghth: string,
     ProcessingFee: string,
@@ -17,5 +20,6 @@ export interface IAppliedLoan {
     loanAmountToApply: string,
     approved: boolean,
     rejected: boolean,
+    pending: boolean,
     id: number
 }

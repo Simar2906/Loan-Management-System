@@ -16,7 +16,7 @@ export class RejectedApplicationsComponent {
     this.loanService.getAllApplications().subscribe({
       next:(response)=>{
         this.allApps = response.filter((data)=>{
-          return data.rejected == true;
+          return data.rejected === true && data.approved === false;
         });
       },
       error:(reject)=>{
