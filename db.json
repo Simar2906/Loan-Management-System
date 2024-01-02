@@ -52,6 +52,7 @@
       "approved": true,
       "rejected": false,
       "pending": false,
+      "dateApplied": "12/23/2021",
       "id": 1
     },
     {
@@ -77,6 +78,7 @@
       "approved": false,
       "rejected": true,
       "pending": false,
+      "dateApplied": "11/21/2021",
       "id": 2
     },
     {
@@ -102,6 +104,7 @@
       "approved": true,
       "rejected": false,
       "pending": false,
+      "dateApplied": "11/31/2022",
       "id": 3
     },
     {
@@ -127,6 +130,7 @@
       "approved": false,
       "rejected": true,
       "pending": false,
+      "dateApplied": "12/01/2023",
       "id": 4
     },
     {
@@ -152,6 +156,7 @@
       "approved": false,
       "rejected": true,
       "pending": false,
+      "dateApplied": "01/12/2023",
       "id": 5
     }
   ],

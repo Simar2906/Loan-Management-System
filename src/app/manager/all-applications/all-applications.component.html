@@ -1,6 +1,6 @@
 <br>
 <a [routerLink]="['/manager']">back</a>
-<div  *ngFor="let loan of allApps">
+<div *ngFor="let loan of allApps">
   <mat-card class="loan-card">
     <mat-card-header>
       <mat-card-title>{{loan.title.toUpperCase()}}</mat-card-title>
@@ -8,31 +8,31 @@
     </mat-card-header>
     <img mat-card-image class="userImage" [src]="loan.customerPicture" alt="Photo of User">
     <img mat-card-sm-image [src]="loan.logo" alt="Photo of {{loan.title}}">
-    
+
     <mat-card-content>
-        <table>
-            <tr>
-                <td>Applicant:</td>
-                <td>{{loan.name}}</td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>{{loan.gender}}</td>
-            </tr>
-            <tr>
-                <td>Current Employer:</td>
-                <td>{{loan.currentemployer}}</td>
-            </tr>
-            <tr>
-                <td>Salary:</td>
-                <td>${{loan.salary}}</td>
-            </tr>
-            <tr>
-                <td>Designation:</td>
-                <td>{{loan.designation}}</td>
-            </tr>
-        </table>
-       <table>
+      <table>
+        <tr>
+          <td>Applicant:</td>
+          <td>{{loan.name}}</td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>{{loan.gender}}</td>
+        </tr>
+        <tr>
+          <td>Current Employer:</td>
+          <td>{{loan.currentemployer}}</td>
+        </tr>
+        <tr>
+          <td>Salary:</td>
+          <td>${{loan.salary}}</td>
+        </tr>
+        <tr>
+          <td>Designation:</td>
+          <td>{{loan.designation}}</td>
+        </tr>
+      </table>
+      <table>
         <tr>
           <td>Applied Amount</td>
           <td>{{loan.appliedAmount}}</td>
@@ -42,23 +42,23 @@
           <td>{{loan.designatedRate}}</td>
         </tr>
         <tr>
-            <td>Processing Fee</td>
-            <td>{{loan.ProcessingFee}}</td>
-          </tr>
-          <tr>
-            <td>Term Length</td>
-            <td>{{loan.TermLenghth}}</td>
-          </tr>
+          <td>Processing Fee</td>
+          <td>{{loan.ProcessingFee}}</td>
+        </tr>
+        <tr>
+          <td>Term Length</td>
+          <td>{{loan.TermLenghth}}</td>
+        </tr>
         <tr>
           <td>Applied Date</td>
-          <td>12/26/2023</td>
+          <td>{{loan.dateApplied}}</td>
         </tr>
-        
-        
-       </table>
+
+
+      </table>
     </mat-card-content>
     <mat-card-actions [class]="loan.approved?'approved':'rejected'">
-        <span mat-raised-button color="green">{{loan.approved ? 'Approved':'Rejected'}}</span>
-      </mat-card-actions>
+      <span mat-raised-button color="green">{{loan.approved ? 'Approved':'Rejected'}}</span>
+    </mat-card-actions>
   </mat-card>
 </div>

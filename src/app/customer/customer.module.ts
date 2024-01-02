@@ -6,17 +6,22 @@ import { AllLoansComponent } from './all-loans/all-loans.component';
 import { AppliedLoansComponent } from './applied-loans/applied-loans.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { ApplyNowComponent } from './apply-now/apply-now.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     CustomerComponent,
     AllLoansComponent,
-    AppliedLoansComponent
+    AppliedLoansComponent,
+    ApplyNowComponent
   ],
   imports: [
     CommonModule,
     CustomerRoutingModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
     
   ]
 })

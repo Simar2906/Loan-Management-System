@@ -1,5 +1,10 @@
 <br>
 <a [routerLink]="['/customer']">back</a>
+<div class="modal-form">
+  <app-apply-now *ngIf="loanFormStatus"></app-apply-now>
+
+</div>
+
 <div  *ngFor="let loan of allLoans">
   <mat-card class="loan-card">
     <mat-card-header>
@@ -25,13 +30,14 @@
           <td>{{loan.TermLenghth}}</td>
         </tr>
         <tr>
-          <td>Prcessing Fee</td>
+          <td>Processing Fee</td>
           <td>{{loan.ProcessingFee}}</td>
         </tr>
        </table>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button >Apply Now</button>
+      <button mat-button (click)="applyNowClicked()">Apply Now</button>
     </mat-card-actions>
   </mat-card>
+
 </div>

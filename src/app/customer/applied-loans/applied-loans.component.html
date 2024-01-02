@@ -26,6 +26,10 @@
             <td>Term Length</td>
             <td>{{loan.TermLenghth}}</td>
           </tr>
+          <tr>
+            <td>Date Applied</td>
+            <td>{{loan.dateApplied|date:'dd-MM-yyyy'}}</td>
+          </tr>
          </table>
       </mat-card-content>
       <mat-card-actions [class]="loan.approved?'approved':'rejected'">

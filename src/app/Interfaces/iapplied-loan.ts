@@ -21,5 +21,6 @@ export interface IAppliedLoan {
     approved: boolean,
     rejected: boolean,
     pending: boolean,
+    dateApplied: string,
     id: number
 }

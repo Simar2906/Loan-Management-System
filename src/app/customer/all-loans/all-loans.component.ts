@@ -8,19 +8,31 @@ import { LoanService } from 'src/app/Services/loan.service';
   styleUrls: ['./all-loans.component.css']
 })
 export class AllLoansComponent {
-  @Input() id:string|undefined = ''; //auto inputted
-  allLoans:ILoan[] = [];
+  @Input() id: string | undefined = ''; //auto inputted
+  allLoans: ILoan[] = [];
+  loanFormStatus: boolean = true;
   constructor(
-    private loanService:LoanService
-  ){}
-ngOnInit(){
-  this.loanService.getAllLoans().subscribe({
-    next:(response)=>{
-      this.allLoans = response;
-    },
-    error:(reject)=>{
-      console.log(reject);
-    }
-  });
-}
+    private loanService: LoanService
+  ) { }
+  ngOnInit() {
+    this.loanService.getAllLoans().subscribe({
+      next: (response) => {
+        this.allLoans = response;
+      },
+      error: (reject) => {
+        console.log(reject);
+      }
+    });
+    this.loanService.popUpFormStatus.subscribe({
+      next: (response) => {
+        this.loanFormStatus = response;
+      },
+      error: (reject) => {
+        console.log(reject);
+      }
+    })
+  }
+  applyNowClicked(): void {
+    this.loanService.applyNewLoan();
+  }
 }
