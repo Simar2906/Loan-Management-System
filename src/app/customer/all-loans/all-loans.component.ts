@@ -10,7 +10,7 @@ import { LoanService } from 'src/app/Services/loan.service';
 export class AllLoansComponent {
   @Input() id: string | undefined = ''; //auto inputted
   allLoans: ILoan[] = [];
-  loanFormStatus: boolean = true;
+  loanFormStatus: boolean = false;
   constructor(
     private loanService: LoanService
   ) { }
@@ -32,7 +32,7 @@ export class AllLoansComponent {
       }
     })
   }
-  applyNowClicked(): void {
-    this.loanService.applyNewLoan();
+  applyNowClicked(loanDetails:ILoan): void {
+    this.loanService.applyNewLoan(loanDetails);
   }
 }

@@ -4,5 +4,8 @@ export interface IUser {
     gender: string,
     name: string,
     password: string,
-    role: string
+    role: string,
+    salary: number,
+    employer: string,
+    designation: string
 }

@@ -5,8 +5,8 @@
 }
 .modal-form{
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 20%;
   
     background-color: white;
     border: 1px solid black;

@@ -1,12 +1,14 @@
 <div>
     <form [formGroup]="applyForm">
+        <img [src]="applyingLoan.logo" id="loan-image" alt="">
+        <p [textContent]="applyingLoan.title.toUpperCase()"></p>
         <table>
             <tr>
                 <td>
                     <label for="Name">Applicant Name:</label>
                 </td>
                 <td>
-                    <input type="text" id="Name" formControlName="applicantName">
+                    <input type="text" [readOnly]="true" id="Name" formControlName="applicantName">
                 </td>
             </tr>
             <tr>
@@ -14,7 +16,7 @@
                     <label for="Gender">Gender:</label>
                 </td>
                 <td>
-                    <input type="text" id="Gender" formControlName="applicantGender">
+                    <input type="text" [readOnly]="true" id="Gender" formControlName="applicantGender">
                 </td>
             </tr>
             <tr>
@@ -22,15 +24,15 @@
                     <label for="Employer">Employer:</label>
                 </td>
                 <td>
-                    <input type="text" id="Employer" formControlName="applicantEmployer">
+                    <input type="text" [readOnly]="true" id="Employer" formControlName="applicantEmployer">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="Salary">Salary:</label>
+                    <label for="Salary">Salary($pa):</label>
                 </td>
                 <td>
-                    <input type="text" id="Salary" formControlName="applicantSalary">
+                    <input type="number" [readOnly]="true" id="Salary" formControlName="applicantSalary">
                 </td>
             </tr>
             <tr>
@@ -38,10 +40,43 @@
                     <label for="Designation">Designation:</label>
                 </td>
                 <td>
-                    <input type="text" id="Designation" formControlName="applicantDesignation">
+                    <input type="text" [readOnly]="true" id="Designation" formControlName="applicantDesignation">
                 </td>
             </tr>
-            
+            <tr>
+                <td>
+                    <label for="amountApplied">Apply Loan for Amount($):</label>
+                </td>
+                <td>
+                    <input type="text" id="amountApplied" formControlName="amountApplied">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="interestRate">Interest Rate(%):</label>
+                </td>
+                <td>
+                    <input type="text" id="interestRate" formControlName="interestRate">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="termLength">Term Length(yr):</label>
+                </td>
+                <td>
+                    <input type="text" id="termLength" formControlName="termLength">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dateApplied">Date:</label>
+                </td>
+                <td>
+                    <input type="text" id="dateApplied" formControlName="dateApplied">
+                </td>
+            </tr>
         </table>
+        <button>Apply</button>&nbsp;
+        <button>Cancel</button>
     </form>
 </div>

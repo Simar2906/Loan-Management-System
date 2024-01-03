@@ -167,7 +167,10 @@
       "gender": "male",
       "name": "nishant",
       "password": "nishant12345",
-      "role": "CUSTOMER"
+      "role": "CUSTOMER",
+      "salary": 50000,
+      "employer":"LeadVenture",
+      "designation":"Developer"
     },
     {
       "id": 2,
@@ -175,7 +178,10 @@
       "gender": "male",
       "name": "john",
       "password": "john12345",
-      "role": "MANAGER"
+      "role": "MANAGER",
+      "salary": 60000,
+      "employer": "Simar's Loan Company",
+      "designation":"Manager"
     },
     {
       "id": 3,
@@ -183,7 +189,10 @@
       "gender": "female",
       "name": "jasmine",
       "password": "jasmine12345",
-      "role": "CUSTOMER"
+      "role": "CUSTOMER",
+      "salary": 45000,
+      "employer": "Google",
+      "designation":"HR"
     },
     {
       "id": 4,
@@ -191,16 +200,21 @@
       "gender": "female",
       "name": "rose",
       "password": "rose12345",
-      "role": "MANAGER"
+      "role": "MANAGER",
+      "salary": 57000,
+      "employer": "Simar's Loan Company",
+      "designation":"Manager"
     },
     {
-      "name": "Ansh Thakral",
-      "email": "nishantharshwardhan@gmail.com",
+      "name": "MS Dhoni",
+      "email": "thala@gmail.com",
       "password": "abc12345",
       "gender": "male",
-      "salary": "40000",
+      "salary": 40000,
       "role": "CUSTOMER",
-      "id": 5
+      "employer":"Farmart",
+      "id": 5,
+      "designation":"Data Scientist"
     }
   ]
 }

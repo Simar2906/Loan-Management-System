@@ -8,7 +8,17 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoginService {
   userApiURL : string = "http://localhost:3000/user"
-  loggedInUser = new BehaviorSubject<IUser|null>(null);
+  loggedInUser = new BehaviorSubject<IUser | null>({
+    id: 0,
+    email: 'string',
+    gender: 'string',
+    name: 'string',
+    password: 'string',
+    role: 'string',
+    salary:0,
+    employer:'string',
+    designation:'string'
+  });
   constructor(private http:HttpClient) { }
   getLoggedInUserData():Observable<IUser[]>{
     return this.http.get<IUser[]>(this.userApiURL);

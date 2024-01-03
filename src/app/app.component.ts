@@ -18,7 +18,8 @@ export class AppComponent {
   ngOnInit(){
     this.loginService.loggedInUser.subscribe({
       next:(response)=>{
-        if(response != undefined || response != null){
+        if((response != undefined || response != null) && this.loginService.loggedInUser.value?.email != 'string'){
+          console.log('heya');
           this.loginStatus = true;
           this.userName = this.loginService.loggedInUser.getValue()?.name;
         }

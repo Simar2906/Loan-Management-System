@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
 import { ILoan } from '../Interfaces/iloan';
-import { LoginService } from './login.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IAppliedLoan } from '../Interfaces/iapplied-loan';
 
@@ -11,6 +10,15 @@ import { IAppliedLoan } from '../Interfaces/iapplied-loan';
 export class LoanService {
   apiURLLoan:string = 'http://localhost:3000/loans';
   apiURLApplied:string = 'http://localhost:3000/appliedNewLoans';
+  currentApplyingLoan = new BehaviorSubject<ILoan>({
+    logo: 'string',
+    title: 'string',
+    loanAmount: 'string',
+    interestRates: 'string',
+    Mincreditscore: 'string',
+    TermLenghth: 'string',
+    ProcessingFee: 'string'
+  });
   popUpFormStatus = new BehaviorSubject<boolean>(false);
   constructor(
     private http:HttpClient) { }
@@ -20,8 +28,9 @@ export class LoanService {
   getAllApplications():Observable<IAppliedLoan[]>{
     return this.http.get<IAppliedLoan[]>(this.apiURLApplied);
   }
-  applyNewLoan(){
+  applyNewLoan(loanDetails:ILoan){
     console.log("Loan Applied");
+    this.currentApplyingLoan.next(loanDetails);
     this.popUpFormStatus.next(true);
   }
 }
