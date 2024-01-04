@@ -8,8 +8,8 @@ import { IAppliedLoan } from '../Interfaces/iapplied-loan';
   providedIn: 'root'
 })
 export class LoanService {
-  apiURLLoan:string = 'http://localhost:3000/loans';
-  apiURLApplied:string = 'http://localhost:3000/appliedNewLoans';
+  apiURLLoan: string = 'http://localhost:3000/loans';
+  apiURLApplied: string = 'http://localhost:3000/appliedNewLoans';
   currentApplyingLoan = new BehaviorSubject<ILoan>({
     logo: 'string',
     title: 'string',
@@ -21,14 +21,14 @@ export class LoanService {
   });
   popUpFormStatus = new BehaviorSubject<boolean>(false);
   constructor(
-    private http:HttpClient) { }
-  getAllLoans():Observable<ILoan[]>{
+    private http: HttpClient) { }
+  getAllLoans(): Observable<ILoan[]> {
     return this.http.get<ILoan[]>(this.apiURLLoan);
   }
-  getAllApplications():Observable<IAppliedLoan[]>{
+  getAllApplications(): Observable<IAppliedLoan[]> {
     return this.http.get<IAppliedLoan[]>(this.apiURLApplied);
   }
-  applyNewLoan(loanDetails:ILoan){
+  applyNewLoan(loanDetails: ILoan) {
     console.log("Loan Applied");
     this.currentApplyingLoan.next(loanDetails);
     this.popUpFormStatus.next(true);

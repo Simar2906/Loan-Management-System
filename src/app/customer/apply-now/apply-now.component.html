@@ -46,27 +46,42 @@
             </tr>
             <tr>
                 <td>
-                    <label for="amountApplied">Apply Loan for Amount($):</label>
+                    <label for="amountApplied">Apply Loan for Amount($)*:</label>
                 </td>
                 <td>
-                    <input type="text" id="amountApplied" formControlName="amountApplied">
+                    <input type="number" id="amountApplied" formControlName="amountApplied">
                 </td>
+                <div *ngIf="applyForm.controls['amountApplied'].dirty">
+                    <span style="color: red;"*ngIf="applyForm.controls['amountApplied'].errors?.['required']">Amount is required!</span>
+                    <span style="color: red;" *ngIf="applyForm.controls['amountApplied'].errors?.['min']">Min. for {{applyingLoan.title}} is {{loanRange[0]|currency}}</span>
+                    <span style="color: red;" *ngIf="applyForm.controls['amountApplied'].errors?.['max']">Max. for {{applyingLoan.title}} is {{loanRange[1]|currency}}</span>
+                </div>
             </tr>
             <tr>
                 <td>
-                    <label for="interestRate">Interest Rate(%):</label>
+                    <label for="interestRate">Interest Rate(%)*:</label>
                 </td>
                 <td>
-                    <input type="text" id="interestRate" formControlName="interestRate">
+                    <input type="number" id="interestRate" formControlName="interestRate">
                 </td>
+                <div *ngIf="applyForm.controls['interestRate'].dirty">
+                    <span style="color: red;"*ngIf="applyForm.controls['interestRate'].errors?.['required']">Interest is required!</span>
+                    <span style="color: red;" *ngIf="applyForm.controls['interestRate'].errors?.['min']">Min. for {{applyingLoan.title}} is {{range[0]}}</span>
+                    <span style="color: red;" *ngIf="applyForm.controls['interestRate'].errors?.['max']">Max. for {{applyingLoan.title}} is {{range[1]}}</span>
+                </div>
             </tr>
             <tr>
                 <td>
-                    <label for="termLength">Term Length(yr):</label>
+                    <label for="termLength">Term Length(yr)*:</label>
                 </td>
                 <td>
-                    <input type="text" id="termLength" formControlName="termLength">
+                    <input type="number" id="termLength" formControlName="termLength" min="0">
                 </td>
+                <div *ngIf="applyForm.controls['termLength'].dirty">
+                    <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['required']">Term Length is required!</span>
+                    <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['min']">Invalid!</span>
+                    <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['max']">Max Term Length is 40 years</span>
+                </div>
             </tr>
             <tr>
                 <td>
@@ -77,7 +92,7 @@
                 </td>
             </tr>
         </table>
-        <button>Apply</button>&nbsp;
-        <button>Cancel</button>
+        <button type="button" (click)="applyLoan()" [disabled]="!applyForm.valid">Apply</button>&nbsp;
+        <button type="button" (click)="cancelApply()">Cancel</button>
     </form>
 </div>
