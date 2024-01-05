@@ -12,7 +12,7 @@ export interface IAppliedLoan {
     interestRates: string,
     designatedRate: number,
     Mincreditscore: number,
-    TermLenghth: number,
+    TermLength: number,
     ProcessingFee: number,
     currentemployer: string,
     designation: string,

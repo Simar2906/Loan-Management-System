@@ -27,17 +27,23 @@ export class ApplyNowComponent {
       applicantDesignation: new FormControl(this.loginService.loggedInUser.value?.designation),
       amountApplied: new FormControl(null, [Validators.required, Validators.min(this.loanRange[0]), Validators.max(this.loanRange[1])]),
       interestRate: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(100)]),
-      processingFee: new FormControl(100),
-      termLength: new FormControl(null, [Validators.required, Validators.min(0.1), Validators.max(40)]),
-      dateApplied: new FormControl(new Date())
+      processingFee: new FormControl(),
+      termLength: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(40)]),
+      dateApplied: new FormControl(new Date().toLocaleDateString())
     })
     console.log('form opened');
     this.loanService.currentApplyingLoan.subscribe({
       next: (response) => {
         this.applyingLoan = response;
+        this.applyForm.controls['processingFee'] = new FormControl(this.applyingLoan.ProcessingFee);
         this.range = response.interestRates.split('-').map(v => parseFloat(v.slice(0, -1)));
         // range -> min, max
         // console.log(range);
+        this.applyForm.get('termLength')?.setValidators([
+          Validators.required, 
+          Validators.min(this.applyingLoan.TermLength), 
+          Validators.max(40)
+        ])
         this.applyForm.get('interestRate')?.setValidators([
           Validators.required,
           Validators.min(this.range[0]),
@@ -56,6 +62,12 @@ export class ApplyNowComponent {
   }
   applyLoan() {
     //create logic
+    if(this.loginService.loggedInUser.value.email == 'string')
+    {
+      console.log('Please Login');
+      this.loanService.popUpFormStatus.next(false);
+      return;
+    }
     console.log(this.applyForm.value);
     this.finalDetails = {
       email: this.loginService.loggedInUser.value?.email,
@@ -67,28 +79,28 @@ export class ApplyNowComponent {
       logo: this.applyingLoan.logo,
       title: this.applyingLoan.title,
       loanAmount: this.applyingLoan.loanAmount,
-      appliedAmount: this.applyForm.value.appliedAmount,
+      appliedAmount: parseInt(this.applyForm.value.amountApplied),
       interestRates: this.applyingLoan.interestRates,
-      designatedRate: this.applyForm.value.interestRate,
+      designatedRate: parseFloat(this.applyForm.value.interestRate),
       Mincreditscore: this.applyingLoan.Mincreditscore,
-      TermLenghth: this.applyForm.value.termLength,
-      ProcessingFee: this.applyForm.value.processingFee,
-      currentemployer: this.applyForm.value.currentemployer,
+      TermLength: parseFloat(this.applyForm.value.termLength),
+      ProcessingFee: parseInt(this.applyForm.value.processingFee),
+      currentemployer: this.loginService.loggedInUser.value.employer,
       designation: this.applyForm.value.designation,
-      salary: this.applyForm.value.salary,
+      salary: this.loginService.loggedInUser.value?.salary,
       approved: false,
       rejected: false,
       pending: true,
       dateApplied: this.applyForm.value.Date,
-      id: this.loanService.currentId.value+1
+      id: this.loanService.currentId.value + 1
     }
-    this.loanService.currentId.next(this.loanService.currentId.value+1);
-    
+    this.loanService.currentId.next(this.loanService.currentId.value + 1);
+
     this.loanService.registerNewLoan(this.finalDetails).subscribe({
-      next:(response)=>{
+      next: (response) => {
         console.log('Form Data Uploaded successfully!');
       },
-      error:(reject)=>{
+      error: (reject) => {
         console.log(reject);
       }
     });

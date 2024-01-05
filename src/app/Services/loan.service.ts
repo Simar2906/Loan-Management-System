@@ -16,7 +16,7 @@ export class LoanService {
     loanAmount: 'string',
     interestRates: 'string',
     Mincreditscore: 660,
-    TermLenghth: 1,
+    TermLength: 4,
     ProcessingFee: 100
   });
   popUpFormStatus = new BehaviorSubject<boolean>(false);

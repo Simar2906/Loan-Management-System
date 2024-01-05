@@ -4,7 +4,7 @@ export interface ILoan {
     loanAmount: string,
     interestRates: string,
     Mincreditscore: number,
-    TermLenghth: number,
+    TermLength: number,
     ProcessingFee: number
 }
 

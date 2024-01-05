@@ -79,7 +79,7 @@
                 </td>
                 <div *ngIf="applyForm.controls['termLength'].dirty">
                     <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['required']">Term Length is required!</span>
-                    <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['min']">Invalid!</span>
+                    <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['min']">Min. Term Length is {{applyingLoan.TermLength}} years</span>
                     <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['max']">Max Term Length is 40 years</span>
                 </div>
             </tr>
