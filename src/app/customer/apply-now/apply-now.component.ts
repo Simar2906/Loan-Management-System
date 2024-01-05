@@ -29,7 +29,7 @@ export class ApplyNowComponent {
       interestRate: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(100)]),
       processingFee: new FormControl(),
       termLength: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(40)]),
-      dateApplied: new FormControl(new Date().toLocaleDateString())
+      dateApplied: new FormControl(new Date())
     })
     console.log('form opened');
     this.loanService.currentApplyingLoan.subscribe({
@@ -86,16 +86,16 @@ export class ApplyNowComponent {
       TermLength: parseFloat(this.applyForm.value.termLength),
       ProcessingFee: parseInt(this.applyForm.value.processingFee),
       currentemployer: this.loginService.loggedInUser.value.employer,
-      designation: this.applyForm.value.designation,
+      designation: this.applyForm.value.applicantDesignation,
       salary: this.loginService.loggedInUser.value?.salary,
       approved: false,
       rejected: false,
       pending: true,
-      dateApplied: this.applyForm.value.Date,
+      dateApplied: this.applyForm.value.dateApplied,
       id: this.loanService.currentId.value + 1
     }
     this.loanService.currentId.next(this.loanService.currentId.value + 1);
-
+    console.log(this.finalDetails);
     this.loanService.registerNewLoan(this.finalDetails).subscribe({
       next: (response) => {
         console.log('Form Data Uploaded successfully!');

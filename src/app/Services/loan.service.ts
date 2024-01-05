@@ -30,6 +30,14 @@ export class LoanService {
       }
     })
   }
+  yearsToYearsMonthsDays(totalYears:number):any {
+    const years = Math.floor(totalYears);
+    const decimalMonths = (totalYears - years) * 12;
+    const months = Math.floor(decimalMonths);
+    const days = Math.floor((decimalMonths - months) * 30.44);
+  
+    return { years, months, days };
+  }
   getAllLoans(): Observable<ILoan[]> {
     return this.http.get<ILoan[]>(this.apiURLLoan);
   }
@@ -48,5 +56,16 @@ export class LoanService {
       {
         headers: new HttpHeaders({ 'content-type': 'application/json' })
       })
+  }
+  getLoanStatus(loan:IAppliedLoan):string{
+    if(loan.rejected == false && loan.approved == false){
+      return 'pending';
+    }
+    else if(loan.rejected == true){
+      return 'rejected';
+    }
+    else{
+      return 'approved';
+    }
   }
 }

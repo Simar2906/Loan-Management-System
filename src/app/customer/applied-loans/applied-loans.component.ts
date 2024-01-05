@@ -11,9 +11,10 @@ import { LoginService } from 'src/app/Services/login.service';
 export class AppliedLoansComponent {
   @Input() id:string|undefined = '';
   appliedLoans:IAppliedLoan[] = [];
+  termObject = {};
   empty:boolean = false;
   constructor(
-    private loanService:LoanService,
+    protected loanService:LoanService,
     private loginService:LoginService
   ){}
   ngOnInit(){
@@ -22,6 +23,7 @@ export class AppliedLoansComponent {
         this.appliedLoans = response.filter((data)=>{
           return this.loginService.loggedInUser.getValue()?.email == data.email;
         });
+        console.log(this.appliedLoans);
         if(this.appliedLoans.length == 0){
           this.empty = true;
         }
@@ -30,5 +32,8 @@ export class AppliedLoansComponent {
         console.log(reject);
       }
     });
+  }
+  createTime(time:any){
+    return this.loanService.yearsToYearsMonthsDays(time);
   }
 }

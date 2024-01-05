@@ -11,20 +11,20 @@
       <mat-card-content>
          <table>
           <tr>
-            <td>Applied Amount</td>
+            <td>Applied Requested</td>
             <td>{{loan.appliedAmount}}</td>
           </tr>
           <tr>
-            <td>Interest Rate</td>
-            <td>{{loan.interestRates}}</td>
+            <td>Interest Rate Requested</td>
+            <td>{{loan.designatedRate}}</td>
           </tr>
           <tr>
-            <td>Processing Fee</td>
+            <td>Processing Fee Paid</td>
             <td>{{loan.ProcessingFee}}</td>
           </tr>
           <tr>
-            <td>Term Length</td>
-            <td>{{loan.TermLength}}</td>
+            <td>Term Length Requested</td>
+            <td>{{createTime(loan.TermLength).years}}Y,{{createTime(loan.TermLength).months}}M,{{createTime(loan.TermLength).days}}D</td>
           </tr>
           <tr>
             <td>Date Applied</td>
@@ -32,8 +32,8 @@
           </tr>
          </table>
       </mat-card-content>
-      <mat-card-actions [class]="loan.approved?'approved':'rejected'">
-        <span mat-raised-button color="green">{{loan.approved ? 'Approved':'Rejected'}}</span>
+      <mat-card-actions [class]="this.loanService.getLoanStatus(loan)">
+        <span mat-raised-button color="green">{{this.loanService.getLoanStatus(loan)|titlecase}}</span>
       </mat-card-actions>
     </mat-card>
   </div>

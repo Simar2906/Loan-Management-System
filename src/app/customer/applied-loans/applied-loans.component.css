@@ -9,6 +9,9 @@
 .rejected{
     background-color: red;
 }
+.pending{
+    background-color: gold;
+}
 .NoLoan{
     color:red;
 }
