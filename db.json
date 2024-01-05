@@ -53,6 +53,31 @@
       "pending": true,
       "dateApplied": "2024-01-05T10:00:09.818Z",
       "id": 1
+    },
+    {
+      "email": "simar@gmail.com",
+      "gender": "male",
+      "name": "simar",
+      "password": "simar12345",
+      "role": "CUSTOMER",
+      "customerPicture": "https://th.bing.com/th/id/OIP.v6tYs4KzpxuhWrlBni9NaQHaLH?rs=1&pid=ImgDetMain",
+      "logo": "https://play-lh.googleusercontent.com/GdICLxnKd-e-lmV46N_SjihWHzAUX1nj8e--dF2KrQjvomN4zxOR-iEWwsTG_Tqr_oc",
+      "title": "Bank of America",
+      "loanAmount": "$5,000-$100,000",
+      "appliedAmount": 50000,
+      "interestRates": "6.23%-20.23%",
+      "designatedRate": 15,
+      "Mincreditscore": 450,
+      "TermLength": 12,
+      "ProcessingFee": 120,
+      "currentemployer": "LeadVenture",
+      "designation": "Developer",
+      "salary": 50000,
+      "approved": false,
+      "rejected": false,
+      "pending": true,
+      "dateApplied": "2024-01-05T10:24:13.020Z",
+      "id": 2
     }
   ],
   "user": [
