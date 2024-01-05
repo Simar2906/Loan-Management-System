@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../Services/login.service';
-import { IUser } from './iuser';
+import { IUser } from '../Interfaces/iuser';
 import { Router } from '@angular/router';
 
 

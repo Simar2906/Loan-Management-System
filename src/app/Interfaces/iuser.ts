@@ -7,5 +7,6 @@ export interface IUser {
     role: string,
     salary: number,
     employer: string,
-    designation: string
+    designation: string,
+    userPic: string
 }

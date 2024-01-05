@@ -33,6 +33,6 @@ export class AllLoansComponent {
     })
   }
   applyNowClicked(loanDetails:ILoan): void {
-    this.loanService.applyNewLoan(loanDetails);
+    this.loanService.applyNewLoanClicked(loanDetails);
   }
 }

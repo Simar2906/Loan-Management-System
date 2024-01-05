@@ -1,6 +1,6 @@
 <div class="overlay"></div>
 <div class="modal-form">
-    <form [formGroup]="applyForm">
+    <form [formGroup]="applyForm" (submit)="applyLoan()">
         <img [src]="applyingLoan.logo" id="loan-image" alt="">
         <p [textContent]="applyingLoan.title.toUpperCase()"></p>
         <table>
@@ -92,7 +92,7 @@
                 </td>
             </tr>
         </table>
-        <button type="button" (click)="applyLoan()" [disabled]="!applyForm.valid">Apply</button>&nbsp;
+        <button type="submit" [disabled]="!applyForm.valid">Apply</button>&nbsp;
         <button type="button" (click)="cancelApply()">Cancel</button>
     </form>
 </div>
