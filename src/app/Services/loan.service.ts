@@ -22,14 +22,17 @@ export class LoanService {
   popUpFormStatus = new BehaviorSubject<boolean>(false);
   currentId = new BehaviorSubject<number>(-1);
   constructor(
-    private http: HttpClient) { }
-  ngOnInit() {
-    this.getAllApplications().subscribe({
-      next:(response)=>{
-        this.currentId.next(Math.max(...response.map(loan=>loan.id)));
-      }
-    })
-  }
+    private http: HttpClient) {
+      this.getAllApplications().subscribe({
+        next:(response)=>{
+          this.currentId.next(Math.max(...response.map(loan=>loan.id)));
+          console.log('loanBase is '+this.currentId.value);
+        },
+        error:(reject)=>{
+          console.log(reject);
+        }
+      })
+     }
   yearsToYearsMonthsDays(totalYears:number):any {
     const years = Math.floor(totalYears);
     const decimalMonths = (totalYears - years) * 12;
