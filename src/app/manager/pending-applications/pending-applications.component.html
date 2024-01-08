@@ -1,6 +1,6 @@
 <br>
 <a [routerLink]="['/manager']">back</a>
-<div *ngFor="let loan of allApps">
+<div *ngFor="let loan of pendingApps">
   <mat-card class="loan-card">
     <mat-card-header>
       <mat-card-title>{{loan.title.toUpperCase()}}</mat-card-title>
@@ -51,8 +51,9 @@
         </tr>
       </table>
     </mat-card-content>
-    <mat-card-actions [class]="this.loanService.getLoanStatus(loan)">
-      <span mat-raised-button color="green">{{this.loanService.getLoanStatus(loan)|titlecase}}</span>
+    <mat-card-actions>
+    <button mat-raised-button (click)="actOnLoan(loan.id, 'approve')">Approve</button>
+    <button mat-raised-button (click)="actOnLoan(loan.id, 'reject')">Reject</button>
     </mat-card-actions>
   </mat-card>
 </div>

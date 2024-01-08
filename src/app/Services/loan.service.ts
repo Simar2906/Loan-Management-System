@@ -68,4 +68,21 @@ export class LoanService {
       return 'approved';
     }
   }
+  updateLoan(loanID:number, action:string):Observable<IAppliedLoan>{
+    let api = this.apiURLApplied + '/' + loanID;
+    if(action == 'approved'){
+      return this.http.patch<IAppliedLoan>(api, 
+        {['approved']: true,
+        ['rejected']: false,
+        ['pending']:false
+    });
+    }
+    else{
+      return this.http.patch<IAppliedLoan>(api, 
+        {['approved']: false,
+        ['rejected']: true,
+        ['pending']:false
+    });
+    }
+  }
 }

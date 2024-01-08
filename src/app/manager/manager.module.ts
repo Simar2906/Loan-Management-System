@@ -6,6 +6,7 @@ import { AllApplicationsComponent } from './all-applications/all-applications.co
 import { ApprovedApplicationsComponent } from './approved-applications/approved-applications.component';
 import { RejectedApplicationsComponent } from './rejected-applications/rejected-applications.component';
 import { MatCardModule } from '@angular/material/card';
+import { PendingApplicationsComponent } from './pending-applications/pending-applications.component';
 
 
 
@@ -14,7 +15,8 @@ import { MatCardModule } from '@angular/material/card';
     ManagerComponent,
     AllApplicationsComponent,
     ApprovedApplicationsComponent,
-    RejectedApplicationsComponent
+    RejectedApplicationsComponent,
+    PendingApplicationsComponent
   ],
   imports: [
     CommonModule,

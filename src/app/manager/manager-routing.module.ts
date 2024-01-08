@@ -4,6 +4,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { AllApplicationsComponent } from './all-applications/all-applications.component';
 import { ApprovedApplicationsComponent } from './approved-applications/approved-applications.component';
 import { RejectedApplicationsComponent } from './rejected-applications/rejected-applications.component';
+import { PendingApplicationsComponent } from './pending-applications/pending-applications.component';
 
 const routes: Routes = [
   {path:'', component:ManagerComponent,
@@ -11,7 +12,7 @@ const routes: Routes = [
     {path:'AllApps', component:AllApplicationsComponent},
     {path:'ApprovedApps', component:ApprovedApplicationsComponent},
     {path:'RejectedApps', component:RejectedApplicationsComponent},
-
+    {path:'PendingApps', component: PendingApplicationsComponent}
   ]}
 ];
 

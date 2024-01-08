@@ -83,14 +83,14 @@
                     <span style="color: red;"*ngIf="applyForm.controls['termLength'].errors?.['max']">Max Term Length is 40 years</span>
                 </div>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>
                     <label for="dateApplied">Date:</label>
                 </td>
                 <td>
                     <input type="text" id="dateApplied" formControlName="dateApplied">
                 </td>
-            </tr>
+            </tr> -->
         </table>
         <button type="submit" [disabled]="!applyForm.valid">Apply</button>&nbsp;
         <button type="button" (click)="cancelApply()">Cancel</button>

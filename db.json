@@ -49,8 +49,8 @@
       "designation": "Developer",
       "salary": 50000,
       "approved": false,
-      "rejected": false,
-      "pending": true,
+      "rejected": true,
+      "pending": false,
       "dateApplied": "2024-01-05T10:00:09.818Z",
       "id": 1
     },
@@ -78,6 +78,31 @@
       "pending": true,
       "dateApplied": "2024-01-05T10:24:13.020Z",
       "id": 2
+    },
+    {
+      "email": "simar@gmail.com",
+      "gender": "male",
+      "name": "simar",
+      "password": "simar12345",
+      "role": "CUSTOMER",
+      "customerPicture": "https://th.bing.com/th/id/OIP.v6tYs4KzpxuhWrlBni9NaQHaLH?rs=1&pid=ImgDetMain",
+      "logo": "https://download.logo.wine/logo/Chase_Bank/Chase_Bank-Logo.wine.png",
+      "title": "Chase",
+      "loanAmount": "$5,000-$100,000",
+      "appliedAmount": 5900,
+      "interestRates": "4.99%-15.69%",
+      "designatedRate": 12,
+      "Mincreditscore": 660,
+      "TermLength": 5,
+      "ProcessingFee": 200,
+      "currentemployer": "LeadVenture",
+      "designation": "Developer",
+      "salary": 50000,
+      "approved": false,
+      "rejected": false,
+      "pending": true,
+      "dateApplied": "2024-01-08T04:52:49.241Z",
+      "id": 3
     }
   ],
   "user": [
