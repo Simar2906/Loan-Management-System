@@ -26,6 +26,7 @@ export class PendingApplicationsComponent {
     this.loanService.updateLoan(loanId, status).subscribe({
       next:(response)=>{
         console.log('Updated Successfully');
+        this.pendingApps = this.pendingApps.filter(v=>v.id != loanId);
       },
       error:(reject)=>{
         console.log(reject);
