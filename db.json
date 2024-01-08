@@ -174,8 +174,8 @@
       "designation": "Data Scientist",
       "salary": 40000,
       "approved": false,
-      "rejected": false,
-      "pending": true,
+      "rejected": true,
+      "pending": false,
       "dateApplied": "2024-01-08T07:15:27.581Z",
       "id": 6
     },
@@ -198,9 +198,9 @@
       "currentemployer": "LeadVenture",
       "designation": "Developer",
       "salary": 50000,
-      "approved": false,
+      "approved": true,
       "rejected": false,
-      "pending": true,
+      "pending": false,
       "dateApplied": "2024-01-08T07:30:01.558Z",
       "id": 7
     }

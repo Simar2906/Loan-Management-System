@@ -10,7 +10,7 @@ import { LoanService } from 'src/app/Services/loan.service';
 export class RejectedApplicationsComponent {
   allApps:IAppliedLoan[] = [];
   
-  constructor(private loanService:LoanService){}
+  constructor(protected loanService:LoanService){}
   
   ngOnInit(){
     this.loanService.getAllApplications().subscribe({

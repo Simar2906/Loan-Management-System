@@ -1,5 +1,8 @@
 <br>
 <a [routerLink]="['/manager']">back</a>
+<div *ngIf="pendingApps.length == 0">
+    <span style="color: red;">No Pending Loan Applications</span>
+</div>
 <div *ngFor="let loan of pendingApps">
   <mat-card class="loan-card">
     <mat-card-header>
