@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  userApiURL : string = "http://localhost:3000/user"
+  userApiURL : string = "http://localhost:3000/user";
   loggedInUser = new BehaviorSubject<IUser>({
     id: 0,
     email: 'string',

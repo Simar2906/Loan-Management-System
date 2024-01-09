@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { LoginService } from './Services/login.service';
 import { Router } from '@angular/router';
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ export class AppComponent {
   };
   constructor(
     private loginService:LoginService,
-    private router:Router
+    private router:Router,
+    private authService:AuthService
   ){}
   ngOnInit(){
     this.loginService.loggedInUser.subscribe({
@@ -48,6 +50,7 @@ export class AppComponent {
     console.log('pressed logout');
     this.loginService.loggedInUser.next(this.defaultUser);
     this.loginStatus = false;
+    this.authService.removeToken();
     this.router.navigate(['/login']);
   }
 }
