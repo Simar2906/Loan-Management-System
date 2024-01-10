@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../Services/login.service';
 import { IUser } from '../Interfaces/iuser';
 import { Router } from '@angular/router';
-import { AuthService } from '../Services/auth.service';
 
 
 @Component({
@@ -16,8 +15,7 @@ export class LoginComponent {
   userData: IUser[] = [];
   constructor(
     private loginService:LoginService,
-    private router:Router,
-    private authService:AuthService){}
+    private router:Router){}
   ngOnInit(){
     this.loginForm = new FormGroup({
       email: new FormControl(),
@@ -44,7 +42,6 @@ export class LoginComponent {
     else{
 
       this.loginService.loggedInUser.next(loggedInUser);
-      this.authService.createToken(loggedInUser, '1h'); // creating session token
       console.log('logged in');
       
       if(loggedInUser.role ==='CUSTOMER'){
