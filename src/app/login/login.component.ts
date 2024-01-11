@@ -3,7 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../Services/login.service';
 import { IUser } from '../Interfaces/iuser';
 import { Router } from '@angular/router';
-
+import { ILoginFormData } from '../Interfaces/ilogin-form-data';
+import { HttpErrorResponse   } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup = new FormGroup({});
   userData: IUser[] = [];
+  loginData:ILoginFormData = {"email":"","password":""};
   constructor(
     private loginService:LoginService,
     private router:Router){}
@@ -32,6 +34,19 @@ export class LoginComponent {
     })
   }
   loginProcedure(){
+    this.loginData.email = this.loginForm.controls['email'].value;
+    this.loginData.password = this.loginForm.controls['password'].value;
+    this.loginService.postToAuthService(this.loginData).subscribe({
+      next:(response)=>{
+        console.log("resposne Recieved", response);
+      },
+      error:(reject)=>{
+        console.log(reject);
+        if (reject instanceof HttpErrorResponse) {
+          console.log(reject.error); // Check for additional error details in the response
+        }
+      }
+    });
     let loggedInUser= this.userData.find((data)=>{
       return data.email === this.loginForm.value.email
       &&  data.password === this.loginForm.value.password;

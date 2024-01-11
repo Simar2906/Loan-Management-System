@@ -14,6 +14,14 @@ namespace Authenticator_API
       builder.Services.AddEndpointsApiExplorer();
       builder.Services.AddSwaggerGen();
 
+      builder.Services.AddCors(options =>
+      {
+        options.AddPolicy("AllowOrigin",
+            builder => builder.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+      });
+
       var app = builder.Build();
 
       // Configure the HTTP request pipeline.
@@ -25,6 +33,7 @@ namespace Authenticator_API
 
       app.UseHttpsRedirection();
 
+      app.UseCors("AllowOrigin");
       app.UseAuthorization();
 
 

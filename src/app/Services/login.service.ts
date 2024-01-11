@@ -1,13 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from '../Interfaces/iuser';
 import { BehaviorSubject } from 'rxjs';
+import { ILoginFormData } from '../Interfaces/ilogin-form-data';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   userApiURL : string = "http://localhost:3000/user";
+  authURL:string = "https://localhost:7028/Auth";
   loggedInUser = new BehaviorSubject<IUser>({
     id: 0,
     email: 'string',
@@ -23,5 +25,13 @@ export class LoginService {
   constructor(private http:HttpClient) { }
   getLoggedInUserData():Observable<IUser[]>{
     return this.http.get<IUser[]>(this.userApiURL);
+  }
+  postToAuthService(loginDetails:ILoginFormData):Observable<ILoginFormData>{
+    console.log(loginDetails);
+    return this.http.post<ILoginFormData>(this.authURL,
+      loginDetails,
+      {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      });
   }
 }
