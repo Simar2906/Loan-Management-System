@@ -38,11 +38,7 @@ namespace Authenticator_API.Controllers
       {
         await Console.Out.WriteLineAsync(item.name);
       }
-      // Your login logic here...
-      //foreach(var dat in _userData)
-      //{
-      //  Console.WriteLine(dat.password);
-      //}
+      //send token back
       return Ok(loginDetails);
     }
   }
