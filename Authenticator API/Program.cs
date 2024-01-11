@@ -1,4 +1,5 @@
 
+using Authenticator_API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Authenticator_API
@@ -9,13 +10,7 @@ namespace Authenticator_API
     {
       var builder = WebApplication.CreateBuilder(args);
 
-      var app = builder.Build();
-
       // Add services to the container.
-      var userData = await fetchUserData();
-      var userDataService = new UserDataService(userData);
-      builder.Services.AddSingleton<UserDataService>(userDataService);  // Add this line after fetching userData
-
       builder.Services.AddControllers().AddNewtonsoftJson();
       // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
       builder.Services.AddEndpointsApiExplorer();
@@ -25,9 +20,16 @@ namespace Authenticator_API
       {
         options.AddPolicy("AllowOrigin",
             builder => builder.WithOrigins("http://localhost:4200")
-                .AllowAnyHeader()
-                .AllowAnyMethod());
+            .AllowAnyHeader()
+            .AllowAnyMethod());
       });
+      // Register UserDataService
+      builder.Services.AddSingleton<UserDataService>();
+
+      // Register AuthController
+      builder.Services.AddScoped<AuthController>();
+      var app = builder.Build();
+
 
       // Configure the HTTP request pipeline.
       if (app.Environment.IsDevelopment())
@@ -41,11 +43,12 @@ namespace Authenticator_API
       app.UseCors("AllowOrigin");
       app.UseAuthorization();
 
+
       app.MapControllers();
 
-      app.Run();
+      await app.RunAsync();
     }
-
+  
     public static async Task<List<User>> fetchUserData()
     {
       try

@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Authenticator_API.Controllers
 {
@@ -14,11 +15,11 @@ namespace Authenticator_API.Controllers
   [ApiController]
   public class AuthController : ControllerBase
   {
-    private readonly List<User> _userData;
+    private readonly UserDataService _userDataService;
 
-    public AuthController(List<User> userData)
+    public AuthController(UserDataService userDataService)
     {
-      _userData = userData ?? throw new ArgumentNullException(nameof(userData));
+      _userDataService = userDataService;
     }
 
     [HttpGet]
@@ -29,13 +30,19 @@ namespace Authenticator_API.Controllers
     }
     [HttpPost]
     [EnableCors("AllowOrigin")] // Make sure to add this attribute
-    public IActionResult Post([FromBody] LoginFormData loginDetails)
+    public async Task<IActionResult> Post([FromBody] LoginFormData loginDetails)
     {
-      // Your login logic here...
-      foreach(var dat in _userData)
+      var _userData = await _userDataService.FetchUserData();
+
+      foreach(var item in _userData)
       {
-        Console.WriteLine(dat.password);
+        await Console.Out.WriteLineAsync(item.name);
       }
+      // Your login logic here...
+      //foreach(var dat in _userData)
+      //{
+      //  Console.WriteLine(dat.password);
+      //}
       return Ok(loginDetails);
     }
   }
