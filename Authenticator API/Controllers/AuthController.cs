@@ -33,13 +33,19 @@ namespace Authenticator_API.Controllers
     public async Task<IActionResult> Post([FromBody] LoginFormData loginDetails)
     {
       var _userData = await _userDataService.FetchUserData();
-
-      foreach(var item in _userData)
-      {
-        await Console.Out.WriteLineAsync(item.name);
-      }
+      var isAuthenticated = AuthenticateUser(_userData, loginDetails);
+      //foreach(var item in _userData)
+      //{
+      //  await Console.Out.WriteLineAsync(item.name);
+      //}
+      await Console.Out.WriteLineAsync("auth: "+isAuthenticated);
       //send token back
       return Ok(loginDetails);
+    }
+
+    private bool AuthenticateUser(List<User> userList, LoginFormData loginDetails)
+    {
+      return userList.Exists(u=>u.email == loginDetails.email && u.password == loginDetails.password);
     }
   }
 }
