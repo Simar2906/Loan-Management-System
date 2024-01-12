@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/Services/login.service';
   styleUrls: ['./applied-loans.component.css']
 })
 export class AppliedLoansComponent {
-  @Input() id:string|undefined = '';
+  id:string|undefined = '';
   appliedLoans:IAppliedLoan[] = [];
   termObject = {};
   empty:boolean = false;
@@ -21,6 +21,7 @@ export class AppliedLoansComponent {
     this.loanService.getAllApplications().subscribe({
       next:(response)=>{
         let userData = this.loginService.getLoggedInUserData(this.loginService.isLoggedIn());
+        this.id = userData.id.toString();
         this.appliedLoans = response.filter((data)=>{
           return userData.email == data.email;
         });

@@ -1,8 +1,11 @@
 <span *ngIf="loginStatus">Welcome {{userName}}</span> &nbsp;
 <a *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
-<a *ngIf="loginStatus" [routerLink]="['login']" (click) = "handleLogout()">Logout</a>
+<a *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
 &nbsp;
 &nbsp;
 <h1>Simar's Loan Company</h1>
+<div *ngIf="showDashboardLink && isHomeRoute()">
+    <button (click)="redirectToLogin()">Go to your dashboard -></button>
+</div>
 <app-notification></app-notification>
 <router-outlet></router-outlet>

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'LoanManagementSystem';
   loginStatus:boolean = false;
+  showDashboardLink: boolean = true;
   userName: any = '';
   defaultUser = {
     id: 0,
@@ -28,7 +29,6 @@ export class AppComponent {
     private router:Router
   ){}
   ngOnInit(){
-    
     this.loginService.loggedInUser.subscribe({
       next:(response)=>{
         let token = this.loginService.isLoggedIn();
@@ -43,6 +43,13 @@ export class AppComponent {
         console.log(reject);
       }
     })
+  }
+  isHomeRoute(): boolean {
+    return this.router.url === '/';
+  }
+  redirectToLogin(): void {
+    this.showDashboardLink = false;
+    this.router.navigate(['/login']);
   }
   handleLogout(){
     console.log('pressed logout');
