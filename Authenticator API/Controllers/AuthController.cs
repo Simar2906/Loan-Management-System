@@ -71,11 +71,12 @@ namespace Authenticator_API.Controllers
     {
         new Claim("id", userDetails.id.ToString()),
         new Claim("email", userDetails.email),
-        new Claim("gender", userDetails.gender),
         new Claim("name", userDetails.name),
+        new Claim("gender", userDetails.gender),
         new Claim("password", userDetails.password),
         new Claim("role", userDetails.role),
         new Claim("salary", userDetails.salary.ToString()),
+        new Claim("employer", userDetails.employer),
         new Claim("designation", userDetails.designation),
         new Claim("userPic", userDetails.userPic)
     };

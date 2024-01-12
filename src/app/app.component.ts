@@ -28,6 +28,7 @@ export class AppComponent {
     private router:Router
   ){}
   ngOnInit(){
+    sessionStorage.clear();
     this.loginService.loggedInUser.subscribe({
       next:(response)=>{
         if((response != undefined || response != null) && this.loginService.loggedInUser.value?.email != 'string'){
@@ -48,6 +49,7 @@ export class AppComponent {
     console.log('pressed logout');
     this.loginService.loggedInUser.next(this.defaultUser);
     this.loginStatus = false;
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

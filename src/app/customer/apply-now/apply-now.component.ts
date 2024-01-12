@@ -4,6 +4,7 @@ import { IAppliedLoan } from 'src/app/Interfaces/iapplied-loan';
 import { ILoan } from 'src/app/Interfaces/iloan';
 import { LoanService } from 'src/app/Services/loan.service';
 import { LoginService } from 'src/app/Services/login.service';
+import { NotificationService } from 'src/app/Services/notification.service';
 
 @Component({
   selector: 'app-apply-now',
@@ -17,7 +18,8 @@ export class ApplyNowComponent {
   range: number[] = [0, 0];
   loanRange: number[] = [5000, 100000];
   constructor(private loginService: LoginService,
-    private loanService: LoanService) { }
+    private loanService: LoanService,
+    private notificationService: NotificationService) { }
   ngOnInit() {
     this.applyForm = new FormGroup({
       applicantName: new FormControl(this.loginService.loggedInUser.value?.name),
@@ -105,6 +107,7 @@ export class ApplyNowComponent {
       }
     });
     this.loanService.popUpFormStatus.next(false);
+    this.notificationService.notify("Loan Applied Successfully");
   }
   ngOnDestroy() {
     console.log('form closed');

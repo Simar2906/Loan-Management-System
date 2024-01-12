@@ -1,6 +1,6 @@
 <br>
 <a [routerLink]="['/manager']">back</a>
-<div *ngIf="allApps.length == 0">
+<div *ngIf="fetched && allApps.length == 0">
   <span style="color: red;">No Rejected Loan Applications</span>
 </div>
 <div  *ngFor="let loan of allApps">

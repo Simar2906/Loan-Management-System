@@ -10,15 +10,17 @@ import { LoanService } from 'src/app/Services/loan.service';
 })
 export class AllApplicationsComponent {
 allApps:IAppliedLoan[] = [];
-
+fetched:boolean = false;
 constructor(protected loanService:LoanService){}
 
 ngOnInit(){
   this.loanService.getAllApplications().subscribe({
     next:(response)=>{
+      this.fetched = true;
       this.allApps = response;
     },
     error:(reject)=>{
+      this.fetched = true;
       console.log(reject);
     }
   });
