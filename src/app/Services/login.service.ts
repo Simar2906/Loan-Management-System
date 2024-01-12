@@ -26,12 +26,13 @@ export class LoginService {
   getLoggedInUserData():Observable<IUser[]>{
     return this.http.get<IUser[]>(this.userApiURL);
   }
-  postToAuthService(loginDetails:ILoginFormData):Observable<ILoginFormData>{
+  postToAuthService(loginDetails:ILoginFormData):Observable<string>{
     console.log(loginDetails);
-    return this.http.post<ILoginFormData>(this.authURL,
+    return this.http.post(this.authURL,
       loginDetails,
       {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        responseType: 'text'
       });
   }
 }

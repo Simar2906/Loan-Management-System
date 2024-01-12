@@ -39,9 +39,11 @@ export class LoginComponent {
     this.loginService.postToAuthService(this.loginData).subscribe({
       next:(response)=>{
         console.log("resposne Recieved", response);
+        sessionStorage.setItem('token', response);
       },
       error:(reject)=>{
         console.log(reject);
+        alert('User Not found!');
         if (reject instanceof HttpErrorResponse) {
           console.log(reject.error); // Check for additional error details in the response
         }
