@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IAppliedLoan } from 'src/app/Interfaces/iapplied-loan';
 import { ILoan } from 'src/app/Interfaces/iloan';
+import { IUser } from 'src/app/Interfaces/iuser';
 import { LoanService } from 'src/app/Services/loan.service';
 import { LoginService } from 'src/app/Services/login.service';
 import { NotificationService } from 'src/app/Services/notification.service';
@@ -17,16 +18,19 @@ export class ApplyNowComponent {
   finalDetails!: IAppliedLoan;
   range: number[] = [0, 0];
   loanRange: number[] = [5000, 100000];
+  currentUserData!:IUser;
   constructor(private loginService: LoginService,
     private loanService: LoanService,
     private notificationService: NotificationService) { }
   ngOnInit() {
+    this.currentUserData = this.loginService.getLoggedInUserData(this.loginService.isLoggedIn());
+    
     this.applyForm = new FormGroup({
-      applicantName: new FormControl(this.loginService.loggedInUser.value?.name),
-      applicantGender: new FormControl(this.loginService.loggedInUser.value?.gender),
-      applicantEmployer: new FormControl(this.loginService.loggedInUser.value?.employer),
-      applicantSalary: new FormControl(this.loginService.loggedInUser.value?.salary),
-      applicantDesignation: new FormControl(this.loginService.loggedInUser.value?.designation),
+      applicantName: new FormControl(this.currentUserData.name),
+      applicantGender: new FormControl(this.currentUserData.gender),
+      applicantEmployer: new FormControl(this.currentUserData.employer),
+      applicantSalary: new FormControl(this.currentUserData.salary),
+      applicantDesignation: new FormControl(this.currentUserData.designation),
       amountApplied: new FormControl(null, [Validators.required, Validators.min(this.loanRange[0]), Validators.max(this.loanRange[1])]),
       interestRate: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(100)]),
       processingFee: new FormControl(),
@@ -64,20 +68,14 @@ export class ApplyNowComponent {
   }
   applyLoan() {
     //create logic
-    if(this.loginService.loggedInUser.value.email == 'string')
-    {
-      console.log('Please Login');
-      this.loanService.popUpFormStatus.next(false);
-      return;
-    }
     console.log(this.applyForm.value);
     this.finalDetails = {
-      email: this.loginService.loggedInUser.value?.email,
-      gender: this.loginService.loggedInUser.value?.gender,
-      name: this.loginService.loggedInUser.value?.name,
-      password: this.loginService.loggedInUser.value?.password,
-      role: this.loginService.loggedInUser.value?.role,
-      customerPicture: this.loginService.loggedInUser.value?.userPic,
+      email: this.currentUserData.email,
+      gender: this.currentUserData.gender,
+      name: this.currentUserData.name,
+      password: this.currentUserData.password,
+      role: this.currentUserData.role,
+      customerPicture: this.currentUserData.userPic,
       logo: this.applyingLoan.logo,
       title: this.applyingLoan.title,
       loanAmount: this.applyingLoan.loanAmount,
@@ -87,9 +85,9 @@ export class ApplyNowComponent {
       Mincreditscore: this.applyingLoan.Mincreditscore,
       TermLength: parseFloat(this.applyForm.value.termLength),
       ProcessingFee: parseInt(this.applyForm.value.processingFee),
-      currentemployer: this.loginService.loggedInUser.value.employer,
+      currentemployer: this.currentUserData.employer,
       designation: this.applyForm.value.applicantDesignation,
-      salary: this.loginService.loggedInUser.value?.salary,
+      salary: this.currentUserData.salary,
       approved: false,
       rejected: false,
       pending: true,

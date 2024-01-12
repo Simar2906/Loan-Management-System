@@ -26,12 +26,13 @@ export class LoginComponent {
   loginProcedure() {
     this.loginData.email = this.loginForm.controls['email'].value;
     this.loginData.password = this.loginForm.controls['password'].value;
+    
     this.loginService.postToAuthService(this.loginData).subscribe({
       next: (response) => {
         console.log("resposne Recieved", response);
         sessionStorage.setItem('token', response);
         let loggedInUser = this.loginService.getLoggedInUserData(response);
-        this.loginService.loggedInUser.next(loggedInUser);
+        this.loginService.userName.next(loggedInUser.name);
         console.log('logged in');
         if (loggedInUser.role === 'CUSTOMER') {
           this.router.navigate(['/customer']);
