@@ -20,8 +20,9 @@ export class AppliedLoansComponent {
   ngOnInit(){
     this.loanService.getAllApplications().subscribe({
       next:(response)=>{
+        let userData = this.loginService.getLoggedInUserData(this.loginService.isLoggedIn());
         this.appliedLoans = response.filter((data)=>{
-          return this.loginService.loggedInUser.getValue()?.email == data.email;
+          return userData.email == data.email;
         });
         console.log(this.appliedLoans);
         if(this.appliedLoans.length == 0){

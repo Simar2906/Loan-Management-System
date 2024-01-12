@@ -28,16 +28,15 @@ export class AppComponent {
     private router:Router
   ){}
   ngOnInit(){
-    sessionStorage.clear();
+    
     this.loginService.loggedInUser.subscribe({
       next:(response)=>{
-        if((response != undefined || response != null) && this.loginService.loggedInUser.value?.email != 'string'){
-          console.log('heya');
+        let token = this.loginService.isLoggedIn();
+        if(token){
+          let data = this.loginService.getLoggedInUserData(token);
           this.loginStatus = true;
-          this.userName = this.loginService.loggedInUser.getValue()?.name;
-        }
-        else{
-          // this.router.navigate(['/login']);//change for testing
+          this.userName = data.name;
+          console.log("Logged In Successfully");
         }
       },
       error:(reject)=>{

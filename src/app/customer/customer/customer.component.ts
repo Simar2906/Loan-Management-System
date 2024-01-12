@@ -12,7 +12,8 @@ export class CustomerComponent {
   constructor(
     private loginService:LoginService){}
   ngOnInit(){
-    this.id = this.loginService.loggedInUser.getValue()?.id.toString();
+    let token = this.loginService.isLoggedIn();
+    this.id = this.loginService.getLoggedInUserData(token).id.toString();
     console.log('logged in id is: ', this.id);
   }
 }
