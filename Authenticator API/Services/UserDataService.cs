@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-
 public class UserDataService
 {
   public async Task<List<User>> FetchUserData()

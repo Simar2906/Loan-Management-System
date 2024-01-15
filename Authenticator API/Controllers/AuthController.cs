@@ -1,18 +1,9 @@
-using Authenticator_API.DTos;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.JSInterop.Implementation;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
 
 namespace Authenticator_API.Controllers
 {
