@@ -20,7 +20,6 @@ namespace Authenticator_API.Controllers
     [HttpGet]
     public IActionResult Get()
     {
-      // Use _userData as needed
       return Ok("Hello World");
     }
     [HttpPost]
