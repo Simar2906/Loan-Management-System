@@ -33,7 +33,7 @@ namespace Authenticator_API.Controllers
       return Ok("Hello World");
     }
     [HttpPost]
-    [EnableCors("AllowOrigin")] // Make sure to add this attribute
+    [EnableCors("AllowOrigin")]
     public async Task<IActionResult> Post([FromBody] LoginFormData loginDetails)
     {
       var _userData = await _userDataService.FetchUserData();
@@ -44,7 +44,8 @@ namespace Authenticator_API.Controllers
       //  await Console.Out.WriteLineAsync(item.name);
       //}
       await Console.Out.WriteLineAsync("auth: "+isAuthenticated.Item1);
-      //send token back
+
+      //sending token back if user authenticated
       if (isAuthenticated.Item1)
       {
         var token = GenerateToken(isAuthenticated.Item2);
