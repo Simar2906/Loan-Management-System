@@ -1,11 +1,18 @@
-<span *ngIf="loginStatus">Welcome {{userName}}</span> &nbsp;
-<a *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
-<a *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
-&nbsp;
-&nbsp;
-<h1>Simar's Loan Company</h1>
-<div *ngIf="showDashboardLink && isHomeRoute()">
-    <button (click)="redirectToLogin()">Go to your dashboard -></button>
+<div class="pageTitleRibbon">
+    <div class="pageTitle">Simar's Loan Company</div>
+    <div class="sideText">A sub-division of Simar Industries</div>
 </div>
+<div class="    ">
+    <span *ngIf="loginStatus">Welcome {{userName}}</span> &nbsp;
+    <a *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
+    <a *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
+    &nbsp;
+    &nbsp;
+
+    <div *ngIf="showDashboardLink && isHomeRoute()">
+        <button (click)="redirectToLogin()">Go to your dashboard -></button>
+    </div>
+</div>
+
 <app-notification></app-notification>
 <router-outlet></router-outlet>

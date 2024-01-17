@@ -25,9 +25,6 @@ namespace Authenticator_API
       });
      
       builder.Services.AddSingleton<UserDataService>();
-
-      
-      builder.Services.AddScoped<AuthController>();
       var app = builder.Build();
 
 

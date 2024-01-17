@@ -5,8 +5,10 @@ import { authGuard } from './Guards/auth.guard';
 import { customerGuard } from './Guards/customer.guard';
 import { managerGuard } from './Guards/manager.guard';
 import { loginGuard } from './Guards/login.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path:'', component:HomeComponent},
   {path:'login', component:LoginComponent, canActivate:[loginGuard]},
   {path:'customer', loadChildren:()=>import('./customer/customer.module').then(m=>m.CustomerModule),
   canActivate: [authGuard, customerGuard]},

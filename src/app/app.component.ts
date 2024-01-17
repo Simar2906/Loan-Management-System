@@ -9,27 +9,27 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'LoanManagementSystem';
-  loginStatus:boolean = false;
+  loginStatus: boolean = false;
   showDashboardLink: boolean = true;
   userName: any = '';
   constructor(
-    private loginService:LoginService,
-    private router:Router
-  ){}
-  ngOnInit(){
+    private loginService: LoginService,
+    private router: Router
+  ) { }
+  ngOnInit() {
     let token = this.loginService.isLoggedIn();
     this.loginService.userName.subscribe({
-      next:(respose)=>{
-        if(this.loginService.userName.value !='DefaultUser'){
-          this.userName=this.loginService.userName.value;
+      next: (respose) => {
+        if (this.loginService.userName.value != 'DefaultUser') {
+          this.userName = this.loginService.userName.value;
           this.loginStatus = true;
         }
       },
-      error:(reject)=>{
+      error: (reject) => {
         console.log(reject);
       }
     })
-    if(token){
+    if (token) {
       let data = this.loginService.getLoggedInUserData(token);
       this.loginStatus = true;
       this.userName = data.name;
@@ -43,7 +43,7 @@ export class AppComponent {
     this.showDashboardLink = false;
     this.router.navigate(['/login']);
   }
-  handleLogout(){
+  handleLogout() {
     console.log('pressed logout');
     this.loginStatus = false;
     sessionStorage.clear();

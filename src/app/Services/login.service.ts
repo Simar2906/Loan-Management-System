@@ -13,7 +13,7 @@ export class LoginService {
   authURL: string = "https://localhost:7028/Auth";
   userName: BehaviorSubject<string> = new BehaviorSubject('DefaultUser');
   constructor(private http: HttpClient) { }
-  isLoggedIn():string|null {
+  isLoggedIn(): string | null {
     let token = sessionStorage.getItem('token');
     return token;
   }

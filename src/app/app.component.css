@@ -1,9 +1,20 @@
-.approved{
-    background-color: green;
+.pageTitleRibbon{
+    display: flex;
+    height: 10vh;
+    background-color: #1d3557;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.rejected{
-    background-color: red;
+.pageTitle{
+    font-size: 5vh;
+    margin-left: 2vw;
+    min-height: 30px;
+    text-decoration:underline;
+    text-decoration-color: red;
+    display: flex;
 }
-.pending{
-    background-color: gold;
+.sideText{
+    align-self: flex-end;
 }
