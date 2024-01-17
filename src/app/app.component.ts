@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LoginService } from './Services/login.service';
-import { Router } from '@angular/router';
-
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +17,14 @@ export class AppComponent {
   ) { }
   ngOnInit() {
     let token = this.loginService.isLoggedIn();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Call your logic here, for example:
+        this.isHomeRoute();
+      }
+    });
+
     this.loginService.userName.subscribe({
       next: (respose) => {
         if (this.loginService.userName.value != 'DefaultUser') {
@@ -37,7 +44,17 @@ export class AppComponent {
     }
   }
   isHomeRoute(): boolean {
-    return this.router.url === '/';
+    if(this.router.url === '/'){
+      this.showDashboardLink = true;
+      return true;
+    }
+    else{
+      this.showDashboardLink = false;
+      return false;
+    }
+  }
+  goToHome(): void {
+    this.router.navigate(['/']);
   }
   redirectToLogin(): void {
     this.showDashboardLink = false;

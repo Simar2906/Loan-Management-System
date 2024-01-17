@@ -1,3 +1,6 @@
+#reset-this-root {
+    all: initial;
+}
 .pageTitleRibbon{
     display: flex;
     height: 10vh;
@@ -6,15 +9,63 @@
     color: white;
     align-items: center;
     flex-wrap: wrap;
+    border-bottom: 1px white solid;
 }
 .pageTitle{
     font-size: 5vh;
     margin-left: 2vw;
+    margin-right: 2vw;
     min-height: 30px;
+    
+    align-self: center;
+}
+.pageTitle span{
     text-decoration:underline;
     text-decoration-color: red;
-    display: flex;
+    user-select: none;
+}
+.pageTitle span:hover{
+    cursor: pointer;
 }
 .sideText{
     align-self: flex-end;
+}
+.actionsPanel{
+    color: white;
+    background-color: #375a85;
+    padding: 10px;
+    display: flex;
+    justify-content:space-between;
+    height: 3vh;
+    max-height: 30px;
+    align-items: center;
+}
+.logButtons{
+    height: 30px;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: #1d3557;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logButtons:hover{
+    background-color: rgb(177, 0, 0);
+    transition: background-color 0.5s;
+}
+.logButtons:active{
+    box-sizing: border-box;
+    box-shadow:inset 0px 0px 0px 1px #f00;;
+}
+.welcomeMessage{
+    font-size: 20px;
+    margin-right: 2vw;
+    align-self: center;
+}
+.superScript{
+    display: inline;
+    vertical-align: super;
+    font-size: 0.5em;
+    text-decoration: none;
 }

@@ -1,17 +1,17 @@
 <div class="pageTitleRibbon">
-    <div class="pageTitle">Simar's Loan Company</div>
+    <div class="pageTitle"><span (click)="goToHome()">Simar's Loan Company</span><div class="superScript">®</div></div>
     <div class="sideText">A sub-division of Simar Industries</div>
 </div>
-<div class="    ">
-    <span *ngIf="loginStatus">Welcome {{userName}}</span> &nbsp;
-    <a *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
-    <a *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
-    &nbsp;
-    &nbsp;
-
-    <div *ngIf="showDashboardLink && isHomeRoute()">
-        <button (click)="redirectToLogin()">Go to your dashboard -></button>
+<div class="actionsPanel">
+    <div>
+        <a class="logButtons" *ngIf="showDashboardLink && isHomeRoute()" (click)="redirectToLogin()">Go to your dashboard &rarr;</a>
     </div>
+    <div>
+        <span class="welcomeMessage" *ngIf="loginStatus">Welcome {{userName|titlecase}}!</span>
+        <a class="logButtons" *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
+        <a class="logButtons" *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
+    </div>
+    
 </div>
 
 <app-notification></app-notification>
