@@ -1,0 +1,14 @@
+
+.homeHeading{
+    height: 15vw;
+    font-size: 5vw;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    
+}
+.homeHeading span{
+    
+}

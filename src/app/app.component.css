@@ -1,9 +1,12 @@
-#reset-this-root {
-    all: initial;
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 .pageTitleRibbon{
     display: flex;
-    height: 10vh;
+    /* height: 10vh; */
+    padding-block: 1rem 0rem;
     background-color: #1d3557;
     justify-content: space-between;
     color: white;
@@ -12,18 +15,26 @@
     border-bottom: 1px white solid;
 }
 .pageTitle{
-    font-size: 5vh;
     margin-left: 2vw;
     margin-right: 2vw;
     min-height: 30px;
-    
+    padding-bottom: 0.8rem;
     align-self: center;
 }
-.pageTitle span{
+.pageTitle .titleContent{
+    font-size: 2rem;
     text-decoration:underline;
     text-decoration-color: red;
     user-select: none;
 }
+.titleContent::after{
+    content: '®';
+    vertical-align: super;
+    font-size: 0.5em;
+    position: absolute;
+    top: 15px;
+}
+
 .pageTitle span:hover{
     cursor: pointer;
 }
@@ -36,12 +47,14 @@
     padding: 10px;
     display: flex;
     justify-content:space-between;
-    height: 3vh;
-    max-height: 30px;
+    /* height: 3vh; */
+    /* max-height: 30px; */
     align-items: center;
+    flex-wrap: wrap;
 }
 .logButtons{
-    height: 30px;
+    /* height: 30px; */
+    display: block;
     text-decoration: none;
     box-sizing: border-box;
     background-color: #1d3557;
@@ -63,9 +76,9 @@
     margin-right: 2vw;
     align-self: center;
 }
-.superScript{
-    display: inline;
-    vertical-align: super;
-    font-size: 0.5em;
-    text-decoration: none;
+
+@media(min-width:1024px){
+    .pageTitle .titleContent{
+        font-size: 3rem;
+    }
 }
