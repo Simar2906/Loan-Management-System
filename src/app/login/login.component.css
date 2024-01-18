@@ -1,0 +1,9 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.actualForm{
+    display: flex;
+    flex-direction: column;
+}
