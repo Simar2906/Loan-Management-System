@@ -26,6 +26,7 @@
     text-decoration:underline;
     text-decoration-color: red;
     user-select: none;
+    cursor: pointer;
 }
 .titleContent::after{
     content: '®';
@@ -33,10 +34,6 @@
     font-size: 0.5em;
     position: absolute;
     top: 15px;
-}
-
-.pageTitle span:hover{
-    cursor: pointer;
 }
 .sideText{
     align-self: flex-end;
@@ -52,8 +49,12 @@
     align-items: center;
     flex-wrap: wrap;
 }
+.loginRightContainer{
+    display: flex;
+}
 .logButtons{
     /* height: 30px; */
+    font-size: 1.25rem;
     display: block;
     text-decoration: none;
     box-sizing: border-box;
@@ -72,7 +73,7 @@
     box-shadow:inset 0px 0px 0px 1px #f00;;
 }
 .welcomeMessage{
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-right: 2vw;
     align-self: center;
 }

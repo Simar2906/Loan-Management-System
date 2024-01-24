@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #e3f0fc;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.custContainer{
+    padding: 2rem 3rem;
+}
+.typeText{
+    font-size: 2rem;
+    color: rgb(16, 19, 36);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.subTypeText{
+    font-size: 1.5rem;
+    color: rgb(16, 19, 36);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

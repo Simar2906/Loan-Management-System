@@ -6,8 +6,8 @@
     <div>
         <a class="logButtons" *ngIf="showDashboardLink && isHomeRoute()" (click)="redirectToLogin()">Go to your dashboard &rarr;</a>
     </div>
-    <div>
-        <span class="welcomeMessage" *ngIf="loginStatus">Welcome {{userName|titlecase}}!</span>
+    <div class="loginRightContainer">
+        <div class="welcomeMessage" *ngIf="loginStatus">Welcome {{userName|titlecase}}!</div>
         <a class="logButtons" *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
         <a class="logButtons" *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
     </div>
