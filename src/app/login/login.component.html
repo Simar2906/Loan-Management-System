@@ -4,15 +4,15 @@
         <div class="formCard">
             <div class="typeText formTitle">Login</div>
             <form class="subTypeText formContents" [formGroup]="loginForm" (submit)="loginProcedure()">
-                <div>
-                    <label class="formLabel" for="email">Email</label><br>
-                    <input type="text" name="email" id="email" formControlName="email">
+                <div class="formInput">
+                    <label class="formLabel" for="email">Email</label>
+                    <input class="formInputField" type="text" name="email" id="email" formControlName="email">
                 </div>
-                <div>
-                    <label class="formLabel" for="pwd">Password</label><br>
-                    <input type="password" name="password" id="pwd" formControlName="password">
+                <div class="formInput">
+                    <label class="formLabel" for="pwd">Password</label>
+                    <input class="formInputField" type="password" name="password" id="pwd" formControlName="password">
                 </div>
-                <input type="submit" name="" id="" value="Login">
+                <input class="logButtons submitButton" type="submit" name="" id="" value="Login">
             </form>
         </div>
     </div>

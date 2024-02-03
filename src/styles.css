@@ -23,3 +23,71 @@ body {
     color: rgb(16, 19, 36);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.logButtons{
+    border: none;
+    font-size: 1.25rem;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: #1d3557;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.logButtons:hover{
+    background-color: rgb(177, 0, 0);
+    transition: background-color 0.5s;
+}
+.logButtons:active{
+    box-sizing: border-box;
+    box-shadow:inset 0px 0px 0px 1px #f00;;
+}
+.submitButton{
+    margin: 0.75rem 4rem 0 4rem;
+    padding: 0.75rem 0;
+
+}
+.formCard{
+    background-color: #436fa4;
+    /* border: 2px solid #101324; */
+    align-self: center;
+    color: white;
+    text-shadow: 0 0px 15px #1d3557;
+    box-shadow:  0 6px 12px -2px #1d3557;
+    border-radius: 1.2rem;
+}
+.formTitle{
+    text-align: center;
+    padding-bottom: 0.60rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0px 15px #1d3557;
+    box-shadow: 0 -3px 12px -6px #1d3557 inset;
+    border-radius: 1.2rem 1.2rem 0 0;
+}
+.formContents{
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 1.2rem 1.2rem;
+    box-shadow: 0 -3px 12px -6px #1d3557 inset;  
+}
+.formInput{
+    display: flex;
+    flex-direction: column;
+}
+.formLabel{
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+.formInputField{
+    font-size: 1.5rem;
+    padding:0.5rem;
+    background-color: #e3f0fc;
+    color:rgb(16, 19, 36);
+    border-color: #1d3557;
+}
