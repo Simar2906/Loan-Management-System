@@ -16,7 +16,8 @@ body {
 .typeText{
     font-size: 2rem;
     color: rgb(16, 19, 36);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 .subTypeText{
     font-size: 1.5rem;
@@ -45,9 +46,8 @@ body {
     box-shadow:inset 0px 0px 0px 1px #f00;;
 }
 .submitButton{
-    margin: 0.75rem 4rem 0 4rem;
     padding: 0.75rem 0;
-
+    margin-block: 1.5rem;
 }
 .formCard{
     background-color: #436fa4;
@@ -60,31 +60,37 @@ body {
 }
 .formTitle{
     text-align: center;
-    padding-bottom: 0.60rem;
-    font-size: 2.5rem;
-    font-weight: bold;
+    /* padding-bottom: 0.60rem; */
+    margin-block: 1.5rem;
+    font-size: 2rem;
+    /* font-weight: bold; */
     color: white;
     text-shadow: 0 0px 15px #1d3557;
-    box-shadow: 0 -3px 12px -6px #1d3557 inset;
+    /* box-shadow: 0 -3px 12px -6px #1d3557 inset; */
     border-radius: 1.2rem 1.2rem 0 0;
 }
 .formContents{
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     display: flex;
     flex-direction: column;
     border-radius: 0 0 1.2rem 1.2rem;
-    box-shadow: 0 -3px 12px -6px #1d3557 inset;  
+    padding-inline: 2rem;
+    /* box-shadow: 0 -3px 12px -6px #1d3557 inset;   */
 }
-.formInput{
+.formControl{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 .formLabel{
     color: white;
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom:0.5rem;
+    
 }
 .formInputField{
+    border: none;
+    border-radius: 5px;
     font-size: 1.5rem;
     padding:0.5rem;
     background-color: #e3f0fc;

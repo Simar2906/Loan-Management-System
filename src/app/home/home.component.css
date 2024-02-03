@@ -3,9 +3,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-block:2rem;
 }
 .homeHeading{
-    font-size: 7rem;
+    font-size: 6.5rem;
     color: rgb(16, 19, 36);
     font-weight: 700;
     text-shadow: 0 0px 15px #1d3557; 
@@ -17,7 +18,7 @@
     color: red
 }
 .subText{
-    margin-top: 7rem;
+    margin-top: 5rem;
     margin-right: 12rem;
     font-size: 2rem;
     display: flex;
@@ -34,6 +35,5 @@
 }
 .underText{
     display: flex;
-    
     align-self: flex-end;
 }

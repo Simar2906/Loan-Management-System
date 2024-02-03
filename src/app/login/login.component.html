@@ -1,18 +1,18 @@
 <div class="custContainer">
     <div class="actualForm">
-        <div class="typeText">Please Enter Your Login Details:-</div>
+        <!-- <div class="typeText">Please Enter Your Login Details:-</div> -->
         <div class="formCard">
-            <div class="typeText formTitle">Login</div>
+            <div class="typeText formTitle">{{"Sign In"|uppercase}}</div>
             <form class="subTypeText formContents" [formGroup]="loginForm" (submit)="loginProcedure()">
-                <div class="formInput">
+                <div class="formControl">
                     <label class="formLabel" for="email">Email</label>
                     <input class="formInputField" type="text" name="email" id="email" formControlName="email">
                 </div>
-                <div class="formInput">
+                <div class="formControl">
                     <label class="formLabel" for="pwd">Password</label>
                     <input class="formInputField" type="password" name="password" id="pwd" formControlName="password">
                 </div>
-                <input class="logButtons submitButton" type="submit" name="" id="" value="Login">
+                <input class="logButtons submitButton" type="submit" name="" id="" value="Submit">
             </form>
         </div>
     </div>
