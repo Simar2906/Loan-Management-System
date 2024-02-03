@@ -7,12 +7,12 @@
     display: flex;
     /* height: 10vh; */
     padding-block: 1rem 0rem;
-    background-color: #1d3557;
+    background-color: var(--clr-dark);
     justify-content: space-between;
-    color: white;
+    color: var(--clr-fontLight);
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 1px white solid;
+    border-bottom: 1px var(--clr-fontLight) solid;
 }
 .pageTitle{
     margin-left: 2vw;
@@ -24,7 +24,7 @@
 .pageTitle .titleContent{
     font-size: 2rem;
     text-decoration:underline;
-    text-decoration-color: red;
+    text-decoration-color: var(--clr-action);
     user-select: none;
     cursor: pointer;
 }
@@ -39,8 +39,8 @@
     align-self: flex-end;
 }
 .actionsPanel{
-    color: white;
-    background-color: #375a85;
+    color: var(--clr-fontLight);
+    background-color: var(--clr-secondary);
     padding: 10px;
     display: flex;
     justify-content:space-between;
@@ -58,19 +58,19 @@
     display: block;
     text-decoration: none;
     box-sizing: border-box;
-    background-color: #1d3557;
-    color: white;
+    background-color: var(--clr-dark);
+    color: var(--clr-fontLight);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 .logButtons:hover{
-    background-color: rgb(177, 0, 0);
+    background-color: var(--clr-hover);
     transition: background-color 0.5s;
 }
 .logButtons:active{
     box-sizing: border-box;
-    box-shadow:inset 0px 0px 0px 1px #f00;;
+    box-shadow:inset 0px 0px 0px 1px var(--clr-action);
 }
 .welcomeMessage{
     font-size: 1.25rem;

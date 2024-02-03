@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root{
+    --clr-dark:#09182c;
+    --clr-light:#e3f0fc;
+    --clr-secondary: #147cff;
+    --clr-font:#101324;
+    --clr-hover:#b10000;
+    --clr-action:#147cff;
+    --clr-fontLight:white;
+}
 html,
 body {
     height: 100%;
 }
 
 body {
-    background-color: #e3f0fc;
+    background-color: var(--clr-light);
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -15,47 +23,48 @@ body {
 }
 .typeText{
     font-size: 2rem;
-    color: rgb(16, 19, 36);
+    color: var(--clr-font);
     font-family: Roboto, "Helvetica Neue", sans-serif;
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 }
 .subTypeText{
     font-size: 1.5rem;
-    color: rgb(16, 19, 36);
+    color: var(--clr-font);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logButtons{
-    border: none;
+    /* height: 30px; */
     font-size: 1.25rem;
     display: block;
     text-decoration: none;
     box-sizing: border-box;
-    background-color: #1d3557;
-    color: white;
+    background-color: var(--clr-dark);
+    color: var(--clr-fontLight);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 .logButtons:hover{
-    background-color: rgb(177, 0, 0);
+    background-color: var(--clr-hover);
     transition: background-color 0.5s;
 }
 .logButtons:active{
     box-sizing: border-box;
-    box-shadow:inset 0px 0px 0px 1px #f00;;
+    box-shadow:inset 0px 0px 0px 1px var(--clr-action);
 }
 .submitButton{
     padding: 0.75rem 0;
     margin-block: 1.5rem;
+    background-color: var(--clr-secondary);
 }
 .formCard{
-    background-color: #436fa4;
+    background-color: var(--clr-dark);
     /* border: 2px solid #101324; */
     align-self: center;
-    color: white;
-    text-shadow: 0 0px 15px #1d3557;
-    box-shadow:  0 6px 12px -2px #1d3557;
+    color: var(--clr-fontLight);
+    /* text-shadow: 0 0px 15px #1d3557; */
+    box-shadow:  0 6px 12px -2px var(--clr-dark);
     border-radius: 1.2rem;
 }
 .formTitle{
@@ -64,8 +73,8 @@ body {
     margin-block: 1.5rem;
     font-size: 2rem;
     /* font-weight: bold; */
-    color: white;
-    text-shadow: 0 0px 15px #1d3557;
+    color: var(--clr-fontLight);
+    /* text-shadow: 0 0px 15px #1d3557; */
     /* box-shadow: 0 -3px 12px -6px #1d3557 inset; */
     border-radius: 1.2rem 1.2rem 0 0;
 }
@@ -83,7 +92,7 @@ body {
     margin-bottom: 1rem;
 }
 .formLabel{
-    color: white;
+    color: var(--clr-fontLight);
     font-size: 1.25rem;
     margin-bottom:0.5rem;
     
@@ -93,7 +102,6 @@ body {
     border-radius: 5px;
     font-size: 1.5rem;
     padding:0.5rem;
-    background-color: #e3f0fc;
-    color:rgb(16, 19, 36);
-    border-color: #1d3557;
+    background-color: var(--clr-light);
+    color:var(--clr-font);
 }

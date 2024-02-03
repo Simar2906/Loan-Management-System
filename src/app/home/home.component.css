@@ -7,9 +7,9 @@
 }
 .homeHeading{
     font-size: 6.5rem;
-    color: rgb(16, 19, 36);
+    color: var(--clr-font);
     font-weight: 700;
-    text-shadow: 0 0px 15px #1d3557; 
+    text-shadow: 0 0px 15px var(--clr-dark); 
 }
 .homeSubHeading{
     font-size: 1.8rem;
