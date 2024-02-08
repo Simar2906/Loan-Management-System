@@ -1,28 +1,25 @@
-*{
-    padding: 0;
-    box-sizing: border-box;
-    margin: 0;
+.TitleLogo{
+    display: flex;
+    font-size: 1rem;
 }
 .pageTitleRibbon{
     display: flex;
     /* height: 10vh; */
-    padding-block: 1rem 0rem;
+    padding-block:.75rem;
     background-color: var(--clr-dark);
     justify-content: space-between;
     color: var(--clr-fontLight);
     align-items: center;
     flex-wrap: wrap;
-    border-bottom: 1px var(--clr-fontLight) solid;
 }
 .pageTitle{
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin-inline: 2vw;
     min-height: 30px;
-    padding-bottom: 0.8rem;
     align-self: center;
+    font-weight: 700;
 }
-.pageTitle .titleContent{
-    font-size: 2rem;
+.titleContent{
+
     text-decoration:underline;
     text-decoration-color: var(--clr-action);
     user-select: none;
@@ -40,46 +37,30 @@
 }
 .actionsPanel{
     color: var(--clr-fontLight);
-    background-color: var(--clr-secondary);
-    padding: 10px;
+    margin-inline: 1rem;
     display: flex;
     justify-content:space-between;
-    /* height: 3vh; */
-    /* max-height: 30px; */
     align-items: center;
     flex-wrap: wrap;
 }
 .loginRightContainer{
     display: flex;
 }
-.logButtons{
-    /* height: 30px; */
-    font-size: 1.25rem;
-    display: block;
-    text-decoration: none;
-    box-sizing: border-box;
-    background-color: var(--clr-dark);
-    color: var(--clr-fontLight);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.logButtons:hover{
-    background-color: var(--clr-hover);
-    transition: background-color 0.5s;
-}
-.logButtons:active{
-    box-sizing: border-box;
-    box-shadow:inset 0px 0px 0px 1px var(--clr-action);
-}
 .welcomeMessage{
     font-size: 1.25rem;
-    margin-right: 2vw;
     align-self: center;
 }
-
+.rightItems{
+    margin-inline: 0.5rem;
+}
 @media(min-width:1024px){
     .pageTitle .titleContent{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
+}
+.LogoImage{
+    height:3rem;
+    padding-left: 1.25rem;
+    user-select: none;
+    cursor: pointer;
 }

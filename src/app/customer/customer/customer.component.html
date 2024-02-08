@@ -1,5 +1,9 @@
-<a [routerLink]="['AllLoans']">All Loans</a>
-&nbsp;
-&nbsp;
-<a [routerLink]="['AppliedLoans']">Applied Loans</a>
+<ul class="subTypeText navBar">
+    <li>
+        <a class="navBarLink" [routerLink]="['AllLoans']">All Loans</a>
+    </li>
+    <li>
+        <a class="navBarLink" [routerLink]="['AppliedLoans']">Applied Loans</a>
+    </li>
+</ul>
 <router-outlet></router-outlet>

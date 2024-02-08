@@ -1,0 +1,13 @@
+a{
+    text-decoration: none;
+    
+}
+.navBar{
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 20px;
+    background-color: #09182c63;
+}
+.navBarLink{
+    /* font-size: large; */
+}

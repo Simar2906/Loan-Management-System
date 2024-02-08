@@ -1,18 +1,18 @@
 <div class="pageTitleRibbon">
-    <div class="pageTitle"><div class="titleContent" (click)="goToHome()">Simar's Loan Company</div></div>
-    <div class="sideText">A sub-division of Simar Industries</div>
-</div>
+    <img class="LogoImage" src="../assets/Logo.png" (click)="goToHome()">
+    <!-- <div class="TitleLogo">
+        <div class="font-primary pageTitle"><div class="titleContent" (click)="goToHome()">Simar's Loan Company</div></div>
+        <div class="sideText">A sub-division of Simar Industries</div>
+    </div> -->
 <div class="actionsPanel">
-    <div>
-        <a class="logButtons" *ngIf="showDashboardLink && isHomeRoute()" (click)="redirectToLogin()">Go to your dashboard &rarr;</a>
-    </div>
     <div class="loginRightContainer">
-        <div class="welcomeMessage" *ngIf="loginStatus">Welcome {{userName|titlecase}}!</div>
-        <a class="logButtons" *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
-        <a class="logButtons" *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
+        <div class="welcomeMessage rightItems" *ngIf="loginStatus">Welcome {{userName|titlecase}}!</div>
+        <a class="button rightItems" *ngIf="showDashboardLink && isHomeRoute()" (click)="redirectToLogin()">Go to your dashboard &rarr;</a>
+        <a class="button rightItems" *ngIf="!loginStatus" [routerLink]="['login']">Login</a>
+        <a class="button rightItems" *ngIf="loginStatus" [routerLink]="['login']" (click)="handleLogout()">Logout</a>
     </div>
     
 </div>
-
+</div>
 <app-notification></app-notification>
 <router-outlet></router-outlet>
